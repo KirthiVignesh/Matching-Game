@@ -1,10 +1,12 @@
-import './App.css';
+import React from "react";
+import IntroScreen from "./components/IntroScreen";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <IntroScreen />
     </div>
-  );
+  )
 }
 
 export default App;

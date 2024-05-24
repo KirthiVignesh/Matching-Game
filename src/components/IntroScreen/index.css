@@ -1,0 +1,40 @@
+.intro-screen {
+    background-image: url('https://s3-alpha-sig.figma.com/img/fa56/bd65/60c51db815c7b8d80cfda1a8921ca84f?Expires=1717372800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=h9QeR0wRav8FAzc8oxB1pWNSE8IgC4X8qf~VAToqAev7829gKDflVuWV01AYgLx6Qhc~PuLWoPV86t206~D3hie45B0-h4qvpxgTWOSOD3nxM3q-2P4D9RyWiHTgOgG51w8xTuYlxvM~Q0kG~e3Ky3FXjvEVeW98Fq-PMyViUzqthihxZcbYPlpgRiNKMw9n1NWUbuVFtWumVBEe78br~z9O8vl5OdNywG6RLH-Faf4vLtwxjJMKNu1SnmkfYPIuRYLW6y~0FSAgG~EMmEXpD3lRk-YVgYr~9xYjf-G~fP28OqVw2ug2t~Ev1CVqkTdWDy8-1th75KtUd5VmNz62Rw__');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-bg {
+    background-image: url("../../../public/text-bg.png");
+    background-size: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    width: 200px;
+    height: 100px;
+    margin-left: 300px;
+}
+
+.heading {
+    font: Nunito;
+    color: #11AEC6;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.monkey-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monkey {
+    height: 60vh;
+    width: 30vw;
+}
