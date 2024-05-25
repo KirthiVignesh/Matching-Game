@@ -5,18 +5,18 @@ import {Link} from "react-router-dom";
 import Card from '../Card';
 
 const initialCards = [
-    { id: 1, matched: false, value: 'A' },
-    { id: 2, matched: false, value: 'A' },
-    { id: 3, matched: false, value: 'B' },
-    { id: 4, matched: false, value: 'B' },
-    { id: 5, matched: false, value: 'C' },
-    { id: 6, matched: false, value: 'C' },
-    { id: 7, matched: false, value: 'D' },
-    { id: 8, matched: false, value: 'D' },
-    { id: 9, matched: false, value: 'E' },
-    { id: 10, matched: false, value: 'E' },
-    { id: 11, matched: false, value: 'F' },
-    { id: 12, matched: false, value: 'F' }
+    { id: 1, matched: false, value: 'A', isEven:false },
+    { id: 2, matched: false, value: 'A', isEven:true },
+    { id: 3, matched: false, value: 'B', isEven:false },
+    { id: 4, matched: false, value: 'B', isEven:true },
+    { id: 5, matched: false, value: 'C', isEven:false },
+    { id: 6, matched: false, value: 'C', isEven:true },
+    { id: 7, matched: false, value: 'D', isEven:false },
+    { id: 8, matched: false, value: 'D', isEven:true },
+    { id: 9, matched: false, value: 'E', isEven:false },
+    { id: 10, matched: false, value: 'E', isEven:true },
+    { id: 11, matched: false, value: 'F', isEven:false },
+    { id: 12, matched: false, value: 'F', isEven:true }
   ];
 function ActivityScreen() {
     const [cards, setCards] = useState([]);
@@ -90,12 +90,27 @@ function ActivityScreen() {
                     <div>High Score: {highScore}</div>
                     <button onClick={resetGame} >Reset Game</button>
                 </div>
-                <div className='board'>
-                    {
-                        cards.map(card => (
-                            <Card key={card.key} card={card} onClick={() => flipCard(card)} />
-                        ))
-                    }
+                <div className="board">
+                    <div className='board-left'>
+                        {
+                        cards.map(card => {
+                            if(card.isEven === false) {
+                            return <Card key={card.id} card={card} onClick={() => flipCard(card)} />
+                            }
+                            return null;
+                        })
+                        }
+                    </div>
+                    <div className='board-right'>
+                        {
+                        cards.map(card => {
+                            if(card.isEven === true) {
+                            return <Card key={card.id} card={card} onClick={() => flipCard(card)} />
+                            }
+                            return null;
+                        })
+                        }
+                    </div>
                 </div>
             </div>
         </div>

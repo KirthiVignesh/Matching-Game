@@ -28,7 +28,27 @@
 
 .board {
     display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
     flex-wrap: wrap;
-    width: 300px;
-    gap: 10px;
-}
+  }
+
+  .board-left {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  
+  .board-right {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
