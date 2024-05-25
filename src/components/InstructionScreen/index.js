@@ -12,7 +12,7 @@ function InstructionScreen () {
             <div className='card-instructions'>
                 <div className='cards'>
                     <div className='card-1-bg'>
-                        <img className='card-1' src={require('..\\..\\..\\public\\card-1.png')} alt='card-1'/>
+                        <img className='card-1' src={require('..\\public\\card-1.png')} alt='card-1'/>
                     </div>
                     <div>
                         <h2 className='card-text'>Select a</h2>
