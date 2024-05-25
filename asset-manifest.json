@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Matching-Game/static/css/main.3a07da1c.css",
+    "main.js": "/Matching-Game/static/js/main.e5b44209.js",
+    "static/js/453.7b3a82cf.chunk.js": "/Matching-Game/static/js/453.7b3a82cf.chunk.js",
+    "static/media/monkey.png": "/Matching-Game/static/media/monkey.94a61ea3647e68b66717.png",
+    "static/media/card-3.png": "/Matching-Game/static/media/card-3.f68575ca521dd5dd8b79.png",
+    "static/media/card-2-bg.png": "/Matching-Game/static/media/card-2-bg.81ae523369a7e2ed6799.png",
+    "static/media/card-1-bg.png": "/Matching-Game/static/media/card-1-bg.3f186f39cbaff61cf2c1.png",
+    "static/media/back-button.png": "/Matching-Game/static/media/back-button.a0b164bcbe3d827a1d16.png",
+    "static/media/card-1.png": "/Matching-Game/static/media/card-1.1d16901c64ece651bc68.png",
+    "static/media/button.png": "/Matching-Game/static/media/button.87919da662ec8f2dd50d.png",
+    "static/media/play-button.png": "/Matching-Game/static/media/play-button.2c14e8ab352d633b3732.png",
+    "index.html": "/Matching-Game/index.html",
+    "main.3a07da1c.css.map": "/Matching-Game/static/css/main.3a07da1c.css.map",
+    "main.e5b44209.js.map": "/Matching-Game/static/js/main.e5b44209.js.map",
+    "453.7b3a82cf.chunk.js.map": "/Matching-Game/static/js/453.7b3a82cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a07da1c.css",
+    "static/js/main.e5b44209.js"
+  ]
+}
