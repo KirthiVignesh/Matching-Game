@@ -1,5 +1,7 @@
 import React from 'react';
 import './index.css';
+import {Link} from "react-router-dom";
+
 
 function IntroScreen() {
     return (
@@ -10,6 +12,9 @@ function IntroScreen() {
             <div className='monkey-container'>
                 <img className='monkey' src={require('..\\public\\monkey.png')} alt='monkey-png'/>
             </div>
+            <Link to="/instruction-screen" className='link-start'>
+                <div className='start-button'></div>
+            </Link>
         </div>
     )
 }
