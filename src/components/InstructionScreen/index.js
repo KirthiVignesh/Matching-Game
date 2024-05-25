@@ -35,12 +35,12 @@ function InstructionScreen () {
                     </div>
                     <div>
                         <h2 className='text'>If they're same</h2>
-                        <h2 className='card-text'>blue card</h2>
-                        <h4 className='text'>It has alphabets.</h4>
+                        <h2 className='card-text'>Its a match !</h2>
+                        <h4 className='text'>otherwise retry :(</h4>
                     </div>
                 </div>
             </div>
-            <Link to="/" className='play-link'>
+            <Link to="/activity-screen" className='play-link'>
                 <div className='play-button'></div>
             </Link>
         </div>
