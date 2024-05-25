@@ -12,7 +12,7 @@ function InstructionScreen () {
             <div className='card-instructions'>
                 <div className='cards'>
                     <div className='card-1-bg'>
-                        <img className='card-1' src={require('..\\public\\card-1.png')} alt='card-1'/>
+                        <img className='card-1' src={require('../public/card-1.png')} alt='card-1'/>
                     </div>
                     <div>
                         <h2 className='card-text'>Select a</h2>
@@ -31,7 +31,7 @@ function InstructionScreen () {
                 </div>
                 <div className='cards'>
                     <div className='card-3-bg'>
-                        <img src={require('..\\public\\card-3.png')} alt='card-3' />
+                        <img src={require('../public/card-3.png')} alt='card-3' />
                     </div>
                     <div>
                         <h2 className='text'>If they're same</h2>
