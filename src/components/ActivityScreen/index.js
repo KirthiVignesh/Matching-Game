@@ -3,28 +3,31 @@ import { useEffect, useState } from 'react';
 import './index.css';
 import {Link} from "react-router-dom";
 import Card from '../Card';
+import Modal from './Modal';
 
 const initialCards = [
-    { id: 1, matched: false, value: 'A', isEven:false },
-    { id: 2, matched: false, value: 'A', isEven:true },
-    { id: 3, matched: false, value: 'B', isEven:false },
-    { id: 4, matched: false, value: 'B', isEven:true },
-    { id: 5, matched: false, value: 'C', isEven:false },
-    { id: 6, matched: false, value: 'C', isEven:true },
-    { id: 7, matched: false, value: 'D', isEven:false },
-    { id: 8, matched: false, value: 'D', isEven:true },
-    { id: 9, matched: false, value: 'E', isEven:false },
-    { id: 10, matched: false, value: 'E', isEven:true },
-    { id: 11, matched: false, value: 'F', isEven:false },
-    { id: 12, matched: false, value: 'F', isEven:true }
+    { id: 1, matched: false, value: 'A', isEven:false, isImage: true},
+    { id: 2, matched: false, value: 'A', isEven:true, isImage: false },
+    { id: 3, matched: false, value: 'B', isEven:false, isImage: true },
+    { id: 4, matched: false, value: 'B', isEven:true, isImage: false },
+    { id: 5, matched: false, value: 'C', isEven:false, isImage: true },
+    { id: 6, matched: false, value: 'C', isEven:true, isImage: false },
+    { id: 7, matched: false, value: 'D', isEven:false, isImage: true },
+    { id: 8, matched: false, value: 'D', isEven:true, isImage: false },
+    { id: 9, matched: false, value: 'E', isEven:false, isImage: true },
+    { id: 10, matched: false, value: 'E', isEven:true, isImage: false },
+    { id: 11, matched: false, value: 'F', isEven:false, isImage: true },
+    { id: 12, matched: false, value: 'F', isEven:true, isImage: false }
   ];
 function ActivityScreen() {
     const [cards, setCards] = useState([]);
     const [firstCard, setFirstCard] = useState(null);
     const [secondCard, setSecondCard] = useState(null);
     const [lockBoard, setLockBoard] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
+    const [points, setPoints] = useState(0)
 
     useEffect(() => {
       setCards(shuffleArray([...initialCards]));
@@ -51,6 +54,7 @@ function ActivityScreen() {
     
     if (firstCard.value === card.value) {
         setCards(cards.map(c => (c.value === card.value ? { ...c, matched: true } : c)));
+        setPoints(prev => prev + 1);
         setScore(score + 10);
         if (score + 10 > highScore) {
         setHighScore(score + 10);
@@ -59,7 +63,7 @@ function ActivityScreen() {
     } else {
         setTimeout(() => {
         setCards(cards.map(c => (c.id === card.id || c.id === firstCard.id ? { ...c, flipped: false } : c)));
-        if(score > 5) {
+        if(score >= 5) {
             setScore(prev => (prev - 5));
         }
         resetBoard();
@@ -75,9 +79,20 @@ function ActivityScreen() {
     
     const resetGame = () => {
     setScore(0);
+    setPoints(0);
     setCards(shuffleArray([...initialCards]));
     };
+
+    useEffect(() => {
+      if (points === 6) {
+          setShowModal(true);
+      }
+    }, [points]);
     
+    const modalClose = () => {
+        setShowModal(false);
+        resetGame();
+    }
 
     return(
         <div className='activity-screen'>
@@ -88,7 +103,7 @@ function ActivityScreen() {
                 <div className='scoreboard'>
                     <div>Score: {score}</div>
                     <div>High Score: {highScore}</div>
-                    <button onClick={resetGame} >Reset Game</button>
+                    <div>Points: {points}</div>
                 </div>
                 <div className="board">
                     <div className='board-left'>
@@ -113,6 +128,11 @@ function ActivityScreen() {
                     </div>
                 </div>
             </div>
+            <Modal
+                isOpen={showModal}
+                onClose={() => modalClose()}
+                content={<p>You've reached 6 Banana's!</p>}        
+            />
         </div>
     )
 }
