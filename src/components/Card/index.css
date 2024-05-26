@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #61dafb; */
+    /* background-color: #fff; */
     cursor: pointer;
     border-radius: 5px;
   }
@@ -12,4 +12,10 @@
   .card-content {
     font-size: 24px;
     color: #282c34;
+  }
+
+  .open-card {
+    transform: rotate(180) 0.5s;
+    width: 165px;
+    height: 215px;
   }
