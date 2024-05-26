@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #61dafb;
+    /* background-color: #61dafb; */
     cursor: pointer;
     border-radius: 5px;
   }
