@@ -4,6 +4,7 @@ import './index.css';
 import {Link} from "react-router-dom";
 import Card from '../Card';
 import Modal from './Modal';
+import ModalPP from './ModalPP';
 
 const initialCards = [
     { id: 1, matched: false, value: 'A', isEven:false, isImage: true},
@@ -25,6 +26,7 @@ function ActivityScreen() {
     const [secondCard, setSecondCard] = useState(null);
     const [lockBoard, setLockBoard] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const [showModalPP, setShowModalPP] = useState(false);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
     const [points, setPoints] = useState(0)
@@ -94,6 +96,12 @@ function ActivityScreen() {
         resetGame();
     }
 
+    useEffect(() => {
+        if(points === 1 || points === 2 || points === 3 || points === 4 || points === 5) {
+            setShowModalPP(true);
+        }
+    }, [points]);
+
     return(
         <div className='activity-screen'>
             <Link to='/instruction-screen' className='back-link'>
@@ -132,6 +140,11 @@ function ActivityScreen() {
                 isOpen={showModal}
                 onClose={() => modalClose()}
                 content={<p>You've reached 6 Banana's!</p>}        
+            />
+            <ModalPP 
+                isOpen={showModalPP}
+                onClose={() => setShowModalPP(false)}
+                content={<p>Its a match</p>}
             />
         </div>
     )
