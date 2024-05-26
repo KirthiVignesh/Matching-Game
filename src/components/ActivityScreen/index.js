@@ -144,7 +144,7 @@ function ActivityScreen() {
             <ModalPP 
                 isOpen={showModalPP}
                 onClose={() => setShowModalPP(false)}
-                content={<p>Its a match</p>}
+                content={"Its a match!"}
             />
         </div>
     )

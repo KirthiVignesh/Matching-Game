@@ -12,7 +12,7 @@ const ModalPP = ({isOpen, onClose, content}) => {
             overlayClassName="modalPP-overlay"
         >
             <div>
-                {content}
+                <p className='match-text'>{content}</p>
             </div>
             <button onClick={onClose}>Close</button>
         </ReactModal>
