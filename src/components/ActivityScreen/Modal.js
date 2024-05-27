@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import './Modal.css';
+import Monkey from '../../images/monkey.png';
+import ModalButton from '../../images/modal-button.png'
 
 const Modal = ({isOpen, onClose, content}) => {
     return (
@@ -14,9 +16,9 @@ const Modal = ({isOpen, onClose, content}) => {
             <div>
                 {content}
                 <div>
-                    <img className='monkey' src={require('..\\public\\monkey.png')} alt="monkey" />
+                    <img className='monkey' src={Monkey} alt="monkey" />
                 </div>
-                <button className='btn' onClick={onClose}><img className='modal-close-btn' src={require('..\\public\\modal-button.png')} alt="modal-close" /></button>
+                <button className='btn' onClick={onClose}><img className='modal-close-btn' src={ModalButton} alt="modal-close" /></button>
             </div>
         </ReactModal>
     );
